@@ -1,6 +1,7 @@
 
 services:
   nodeapp:
+    image: abedalgane99/dockerpractice
     container_name: nodeapp-contaner
     build:
       context: .
