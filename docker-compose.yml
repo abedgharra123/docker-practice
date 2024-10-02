@@ -5,6 +5,13 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    deploy:
+      replicas: 5
+      update_config:
+        parallelism: 2      
+        delay: 10s          
+        failure_action: pause
+        order: start-first
     volumes:
       - ./src:/app/src:ro
   mongo:
