@@ -1,10 +1,19 @@
 pipeline{
-    agent any;
+    agent {
+        image 'node:22'
+    }
     stages{
         stage("build"){
             steps{
                 echo "build start"
-                docker-compose up --build
+                sh 'npm i'
+            }
+            
+        }
+        stage("test"){
+            steps{
+                echo "build start"
+                sh 'npm run startdev'
             }
             
         }
